@@ -37,10 +37,10 @@ coding.genes <- function (verbose = TRUE)
   ccds$ccds_status <- factor(proper(ccds$ccds_status))
 
   # Remove with ccds_status == Withdrawn
-  ccds       <- ccds %>% dplyr::filter(!grepl('Withdrawm', rlang::UQ(as.name('ccds_status'))))
+  ccds       <- ccds %>% dplyr::filter(!grepl('Withdrawm', !!(as.name('ccds_status'))))
   ccds.genes <- unique(ccds$gene)
 
-  if (any(ccds.genes == '' || is.na(ccds.genes))) {
+  if (any(ccds.genes == '' | is.na(ccds.genes))) {
     warning('Some genes from ccds have empty gene_name, skipping those')
     ccds.genes <- ccds.genes[ccds.genes == '' || is.na(ccds.genes)]
   }
