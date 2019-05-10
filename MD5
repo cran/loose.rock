@@ -1,8 +1,8 @@
-f9b1ea8b03d98cc735148786e61aa3e3 *DESCRIPTION
+6bb6921578ee5de5760b8b55e7b9de23 *DESCRIPTION
 9999261e63c874640cf664186dcb0745 *NAMESPACE
 37e77becc40717a63f8dcfef9e2c62e6 *R/balanced_data.R
 d04b4447423811ec9292e86de19e6c2c *R/cache.R
-206d6a3a30416ab47fa8bd5720a6798d *R/coding.genes.R
+478eb0785c65b32615de91d5d98f47f4 *R/coding.genes.R
 94499bebbdcdeb93df1f474e51a3d435 *R/color_symbol.R
 6ad8c3fee43a0902e9d9369b19772f1d *R/covariance.R
 2b411facde0594a27e314f6eb93412d6 *R/gen_synthetic_data.R
@@ -14,7 +14,7 @@ f88077fea3229e8d6cebe4ad88e78557 *R/string.R
 d39e8bd3237b226d152ecce9d94969dd *build/vignette.rds
 c22060c6f8b931cd166fdbe13077bd9d *inst/doc/Overview.R
 9967333586af305a534590fdab5c6762 *inst/doc/Overview.Rmd
-117d5562e04de0cb633b3b896a41c2d7 *inst/doc/Overview.html
+83b80a924b034a7ff7838201edc7478f *inst/doc/Overview.html
 55c632b2be1b19c352a077dbc5a39b16 *man/balanced.cv.folds.Rd
 e1dc2198ca953f79238c091f35d3a2f3 *man/balanced.train.and.test.Rd
 9551279cb021f69241b142a22dcec7f7 *man/base.dir.Rd
