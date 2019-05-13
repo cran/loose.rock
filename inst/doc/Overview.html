@@ -12,7 +12,7 @@
 
 <meta name="author" content="André Veríssimo" />
 
-<meta name="date" content="2019-05-09" />
+<meta name="date" content="2019-05-10" />
 
 <title>Overview of loose.rock</title>
 
@@ -95,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Overview of loose.rock</h1>
 <h4 class="author">André Veríssimo</h4>
-<h4 class="date">2019-05-09</h4>
+<h4 class="date">2019-05-10</h4>
 
 
 
@@ -162,64 +162,64 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ENSG00000273217</td>
-<td align="left">AC008695.1</td>
+<td align="left">ENSG00000188386</td>
+<td align="left">PPP3R2</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000275013</td>
-<td align="left">PRAME</td>
+<td align="left">ENSG00000062485</td>
+<td align="left">CS</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000127415</td>
-<td align="left">IDUA</td>
+<td align="left">ENSG00000169592</td>
+<td align="left">INO80E</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000008988</td>
-<td align="left">RPS20</td>
+<td align="left">ENSG00000197721</td>
+<td align="left">CR1L</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000073861</td>
-<td align="left">TBX21</td>
+<td align="left">ENSG00000133739</td>
+<td align="left">LRRCC1</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000110987</td>
-<td align="left">BCL7A</td>
+<td align="left">ENSG00000198324</td>
+<td align="left">PHETA1</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000179071</td>
-<td align="left">CCDC89</td>
+<td align="left">ENSG00000131152</td>
+<td align="left">AC010531.1</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000131059</td>
-<td align="left">BPIFA3</td>
+<td align="left">ENSG00000187908</td>
+<td align="left">DMBT1</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000069329</td>
-<td align="left">VPS35</td>
+<td align="left">ENSG00000171608</td>
+<td align="left">PIK3CD</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000077713</td>
-<td align="left">SLC25A43</td>
+<td align="left">ENSG00000275932</td>
+<td align="left">DUSP14</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000169059</td>
-<td align="left">VCX3A</td>
+<td align="left">ENSG00000244234</td>
+<td align="left">GMCL2</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000138448</td>
-<td align="left">ITGAV</td>
+<td align="left">ENSG00000158258</td>
+<td align="left">CLSTN2</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000179097</td>
-<td align="left">HTR1F</td>
+<td align="left">ENSG00000285508</td>
+<td align="left">AL034430.1</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000273859</td>
-<td align="left">RASSF7</td>
+<td align="left">ENSG00000243910</td>
+<td align="left">TUBA4B</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000228333</td>
-<td align="left">RXRB</td>
+<td align="left">ENSG00000124875</td>
+<td align="left">CXCL6</td>
 </tr>
 </tbody>
 </table>
@@ -322,19 +322,19 @@ xdata2 &lt;-<span class="st"> </span><span class="kw">gen.synth.xdata</span>(<sp
 <p><em>Caution: Files are not deleted so the cache directory can become rather big.</em></p>
 <p>Set a temporary directory to save all caches (optional)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">base.dir</span>(<span class="kw">tempdir</span>())
-<span class="co">#&gt; [1] &quot;/tmp/Rtmp0rCJ9A&quot;</span></code></pre></div>
+<span class="co">#&gt; [1] &quot;/tmp/RtmpSvvxZK&quot;</span></code></pre></div>
 <p>Run sum function twice</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">run.cache</span>(sum, <span class="dv">1</span>, <span class="dv">2</span>)
-<span class="co">#&gt; Saving in cache: /tmp/Rtmp0rCJ9A/561a/cache-generic_cache-H_561a43a3af7b265aed512a7995a46f89c382f78fdba4170e569495892b0076ba.RData</span>
+<span class="co">#&gt; Saving in cache: /tmp/RtmpSvvxZK/561a/cache-generic_cache-H_561a43a3af7b265aed512a7995a46f89c382f78fdba4170e569495892b0076ba.RData</span>
 b &lt;-<span class="st"> </span><span class="kw">run.cache</span>(sum, <span class="dv">1</span>, <span class="dv">2</span>)
-<span class="co">#&gt; Loading from cache (not calculating): /tmp/Rtmp0rCJ9A/561a/cache-generic_cache-H_561a43a3af7b265aed512a7995a46f89c382f78fdba4170e569495892b0076ba.RData</span>
+<span class="co">#&gt; Loading from cache (not calculating): /tmp/RtmpSvvxZK/561a/cache-generic_cache-H_561a43a3af7b265aed512a7995a46f89c382f78fdba4170e569495892b0076ba.RData</span>
 <span class="kw">all</span>(a <span class="op">==</span><span class="st"> </span>b)
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>Run rnorm function with an explicit seed <em>(otherwise it would return the same random number)</em></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">run.cache</span>(rnorm, <span class="dv">5</span>, <span class="dt">seed =</span> <span class="dv">1985</span>)
-<span class="co">#&gt; Saving in cache: /tmp/Rtmp0rCJ9A/9636/cache-generic_cache-H_96360922babcb9eeb480fabc9811eab598abaf087c10f3ef49e9093607089531.RData</span>
+<span class="co">#&gt; Saving in cache: /tmp/RtmpSvvxZK/9636/cache-generic_cache-H_96360922babcb9eeb480fabc9811eab598abaf087c10f3ef49e9093607089531.RData</span>
 b &lt;-<span class="st"> </span><span class="kw">run.cache</span>(rnorm, <span class="dv">5</span>, <span class="dt">seed =</span> <span class="dv">2000</span>)
-<span class="co">#&gt; Saving in cache: /tmp/Rtmp0rCJ9A/ab76/cache-generic_cache-H_ab768ab59eab0e3848e3f5b8c133baaa381eb1e6d5fda439f10847d911b0ace7.RData</span>
+<span class="co">#&gt; Saving in cache: /tmp/RtmpSvvxZK/ab76/cache-generic_cache-H_ab768ab59eab0e3848e3f5b8c133baaa381eb1e6d5fda439f10847d911b0ace7.RData</span>
 <span class="kw">all</span>(a <span class="op">==</span><span class="st"> </span>b)
 <span class="co">#&gt; [1] FALSE</span></code></pre></div>
 </div>
