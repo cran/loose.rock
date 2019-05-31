@@ -1,8 +1,8 @@
-cbd84d0239135d8faf5e1a72340809a8 *DESCRIPTION
+b07d2a2e4a3ede647b342bdd4e14453a *DESCRIPTION
 9999261e63c874640cf664186dcb0745 *NAMESPACE
 37e77becc40717a63f8dcfef9e2c62e6 *R/balanced_data.R
 d04b4447423811ec9292e86de19e6c2c *R/cache.R
-12f0c1f7906f749d9fea57aea38f7691 *R/coding.genes.R
+1d38204d4e3625abe2958cb768081c0a *R/coding.genes.R
 94499bebbdcdeb93df1f474e51a3d435 *R/color_symbol.R
 6ad8c3fee43a0902e9d9369b19772f1d *R/covariance.R
 2b411facde0594a27e314f6eb93412d6 *R/gen_synthetic_data.R
@@ -11,10 +11,11 @@ d04b4447423811ec9292e86de19e6c2c *R/cache.R
 af7cc37bc9b88653c49cd5d8745aaa20 *R/multiplot.R
 edecbdaa7d9fe7844ab546a778ba3a46 *R/options.R
 f88077fea3229e8d6cebe4ad88e78557 *R/string.R
-d39e8bd3237b226d152ecce9d94969dd *build/vignette.rds
-c22060c6f8b931cd166fdbe13077bd9d *inst/doc/Overview.R
-9967333586af305a534590fdab5c6762 *inst/doc/Overview.Rmd
-5099b3581636e9a8fc45051a22c10397 *inst/doc/Overview.html
+5166285467b21f55a9dae43985cb7a7a *R/sysdata.rda
+c6aad8de06c414a9d2acc63d0628b494 *build/vignette.rds
+d6b5f7caeb93864de2544c5b166d76fa *inst/doc/Overview.R
+6bfec601c9845b4dd3db56bc1e984ad5 *inst/doc/Overview.Rmd
+484545a1b7ee633e38cb27bec43b2c95 *inst/doc/Overview.html
 55c632b2be1b19c352a077dbc5a39b16 *man/balanced.cv.folds.Rd
 e1dc2198ca953f79238c091f35d3a2f3 *man/balanced.train.and.test.Rd
 9551279cb021f69241b142a22dcec7f7 *man/base.dir.Rd
@@ -39,7 +40,7 @@ ca776b5e361022a858ac12393da3cb73 *man/run.cache.Rd
 9d259e1c455a92ba9a217f5d9ec0e4ec *man/show.message.Rd
 8c8d7caf2c747788b2d3938418e64f17 *man/tempdir.cache.Rd
 eee6cba8322700b6d9381d501b5743a3 *tests/testthat.R
-4c7369bc1865fcad9f21d77788d21315 *tests/testthat/test-coding.genes.R
+13d357462e46de89d39baa85acb1f03d *tests/testthat/test-coding.genes.R
 fe55e523e80bf87a4fdd3a8318a66cbd *tests/testthat/test-colors_symbols.R
 c9c0b96e8af43df7273bf8b10cb0c47b *tests/testthat/test-multiplot.R
 edcb0ddc9df3a5f2f693d84743858170 *tests/testthat/test-proper.R
@@ -47,4 +48,4 @@ edcb0ddc9df3a5f2f693d84743858170 *tests/testthat/test-proper.R
 ade1af28b4ccb090adf2255f360e68e0 *tests/testthat/test-synthetic.R
 958e2c27be5e2a8cb8dcd903d56be337 *tests/testthat/test_balanced_data.R
 b1b154f6d24b6646dfeb3bb09f6efffb *tests/testthat/test_fun_string.R
-9967333586af305a534590fdab5c6762 *vignettes/Overview.Rmd
+6bfec601c9845b4dd3db56bc1e984ad5 *vignettes/Overview.Rmd

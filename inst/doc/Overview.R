@@ -23,8 +23,20 @@ devtools::load_all(".")
 ## ---- message=FALSE, warning=FALSE---------------------------------------
 library(dplyr)
 
-## ----coding.genes, collapse=TRUE, message=FALSE, warning=FALSE-----------
-coding.genes() %>%
+## ----coding.genes, collapse=TRUE, message=FALSE, warning=FALSE, eval=FALSE----
+#  coding.genes() %>%
+#    arrange(external_gene_name) %>% {
+#     slice(., sample(seq(nrow(.)), 15))
+#    } %>%
+#    knitr::kable()
+
+## ---- eval=FALSE, include=FALSE------------------------------------------
+#  # Build internal data for vignette
+#  coding.genes.cache <- coding.genes()
+#  usethis::use_data(coding.genes.cache, overwrite = TRUE)
+
+## ---- echo=FALSE---------------------------------------------------------
+coding.genes.cache %>%
   arrange(external_gene_name) %>% {
    slice(., sample(seq(nrow(.)), 15)) 
   } %>%
