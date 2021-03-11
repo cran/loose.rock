@@ -1,18 +1,18 @@
-## ---- eval=FALSE, include=FALSE-----------------------------------------------
-#  # before running this, change ../man/figures/loose.rock_logo.svg" width="120" align="right
-#  # and uncomment fig.path = "man/figures/README-"
-#  rmarkdown::render('Overview.Rmd', output_file = file.path(dirname(getwd()), 'README.md'), output_format = 'github_document')
-
 ## ----setup, echo=FALSE, include=FALSE-----------------------------------------
-knitr::opts_chunk$set(
-  # fig.path = "man/figures/README-",
-  collapse = TRUE,
-  comment = "#>"
-)
+if (!exists('dont_run_setup')) {
+  dont_run_setup <- FALSE
+} 
+if (!dont_run_setup) {
+  knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+  )
+}
 #
 
 ## ---- include=FALSE-----------------------------------------------------------
 library(loose.rock)
+loose.rock::base.dir(file.path(tempdir(), 'run-cache'))
 
 ## ----install, eval=FALSE------------------------------------------------------
 #  if (!require("BiocManager"))
@@ -27,8 +27,8 @@ library(dplyr)
 
 ## ----coding.genes, collapse=TRUE, message=FALSE, warning=FALSE----------------
 coding.genes() %>%
-  arrange(external_gene_name) %>% {
-   slice(., sample(seq(nrow(.)), 15)) 
+  dplyr::arrange(external_gene_name) %>% {
+   dplyr::slice(., sample(seq(nrow(.)), 15)) 
   } %>%
   knitr::kable()
 
@@ -76,7 +76,7 @@ draw.cov.matrix(xdata2, fun = cor, method = 'pearson') +
   ggplot2::ggtitle('X2 Pearson Correlation Matrix')
 
 ## -----------------------------------------------------------------------------
-base.dir(tempdir())
+base.dir(file.path(tempdir(), 'run-cache'))
 
 ## ----runcache1----------------------------------------------------------------
 a <- run.cache(sum, 1, 2)

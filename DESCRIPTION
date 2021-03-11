@@ -1,6 +1,6 @@
 Package: loose.rock
 Title: Tools for Survival Analysis and Data Science
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: c(person("André", "Veríssimo", email = "andre.verissimo@tecnico.ulisboa.pt", role = c("aut", "cre")),
              person("Susana", "Vinga", email = "susanavinga@tecnico.ulisboa.pt", role = "aut"))
 Description: Collection of functions to improve work-flow in survival analysis and data science.
@@ -21,9 +21,9 @@ Suggests: biomaRt, knitr, rmarkdown, roxygen2, testthat, survival
 VignetteBuilder: knitr
 BugReports: https://github.com/averissimo/loose.rock/issues
 URL: https://github.com/averissimo/loose.rock
-Packaged: 2021-02-13 12:40:37 UTC; averissimo
+Packaged: 2021-03-10 23:09:07 UTC; averissimo
 Author: André Veríssimo [aut, cre],
   Susana Vinga [aut]
 Maintainer: André Veríssimo <andre.verissimo@tecnico.ulisboa.pt>
 Repository: CRAN
-Date/Publication: 2021-02-13 14:10:05 UTC
+Date/Publication: 2021-03-11 05:20:02 UTC

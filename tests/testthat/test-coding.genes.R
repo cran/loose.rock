@@ -1,6 +1,117 @@
 context("coding.genes")
 
-test_that("coding genes retrieves some genes", {
-  genes <- coding.genes(verbose = FALSE)
-  expect_true(all(c('BRCA1', 'BRCA2', 'CHADL', 'BTBD8', 'BCAS2', 'AGAP1') %in% genes$external_gene_name))
+# Make sure cache is clear to avoid corruption
+biomaRt::biomartCacheClear()
+
+mart <- loose.rock:::getHsapiensMart.internal()
+
+base.dir(file.path(tempdir(), "coding_genes"))
+
+# Avoid some lifecycle warnings in versions of R < 4
+suppressWarnings({
+  dplyr::filter_(dplyr::tibble())
+  dplyr::select_(dplyr::tibble())
 })
+
+test_that("getHsapiensMart.internal works", {
+  expect_identical(mart@biomart, "ENSEMBL_MART_ENSEMBL")
+})
+
+test_that("curl_workarund tests with ssl_verifypeer FALSE", {
+  expect_error(
+    expect_warning(
+      loose.rock:::curl.workaround({stop("me")}, verbose = TRUE),
+      "There was an problem, calling the function with ssl_verifypeer to FALSE"
+    ),
+    "me"
+  )
+})
+
+test_that("getBM internal errors and messages", {
+  expect_error(getBM.internal(), "You must provide a valid Mart object")
+  expect_error(
+    getBM.internal(mart = mart, verbose = TRUE),
+    "Argument 'attributes' must be specified"
+  )
+  expect_error(
+    getBM.internal(mart = mart, verbose = FALSE),
+    "Argument 'attributes' must be specified"
+  )
+})
+
+test_that("coding genes retrieves some genes", {
+  # Depending on network connectivity or R version, biomaRt or ccds might
+  #  fail. So this test surppress warnings (as long as there are some genes)
+  #  then the function works (either just from ccds or from both sources)
+  genes <- suppressWarnings(coding.genes(verbose = TRUE))
+  expect_true(
+    all(
+      c(
+        "BRCA1", "BRCA2", "CHADL", "BTBD8", "BCAS2", "AGAP1"
+      ) %in% genes$external_gene_name
+    )
+  )
+})
+
+test_that("getBM multiple combinations of useCache", {
+  args <- list(
+    attributes = c("ensembl_gene_id", "external_gene_name"),
+    filters    = "external_gene_name",
+    values     = c("BRCA1", "BRCA2", "CHADL", "BTBD8", "BCAS2", "AGAP1"),
+    mart       = mart,
+    useCache   = TRUE
+  )
+
+  args.2 <- args
+  args.2[['useCache']] <- FALSE
+
+  expect_identical(
+    do.call(loose.rock:::getBM.internal, args),
+    do.call(loose.rock:::getBM.internal, args.2)
+  )
+
+  if (R.Version()$major >= 4) {
+    args.3 <- args
+    args.3[['useCache']] <- NULL
+    args.3[['failNullUseCache']] <- TRUE
+
+    expect_identical(
+      do.call(loose.rock:::getBM.internal, args),
+      do.call(loose.rock:::getBM.internal, args.3)
+    )
+  }
+
+  args.4 <- args
+  args.4[['useCache']] <- NULL
+
+  expect_identical(
+    do.call(loose.rock:::getBM.internal, args),
+    do.call(loose.rock:::getBM.internal, args.4)
+  )
+})
+
+test_that("getBM internal gets the same as biomaRt::getBM", {
+  args <- list(
+    attributes = c("ensembl_gene_id", "external_gene_name"),
+    filters    = "external_gene_name",
+    values     = c("BRCA1", "BRCA2", "CHADL", "BTBD8", "BCAS2", "AGAP1"),
+    mart       = mart,
+    useCache   = TRUE
+  )
+
+  if (R.Version()$major >= 4) {
+    expect_identical(
+      do.call(loose.rock:::getBM.internal, args),
+      do.call(biomaRt::getBM, args)
+    )
+  } else {
+    expect_error(do.call(biomaRt::getBM, args))
+    args.pre4 <- args
+    args.pre4$useCache <- FALSE
+    expect_identical(
+      do.call(loose.rock:::getBM.internal, args.pre4),
+      do.call(biomaRt::getBM, args.pre4)
+    )
+  }
+})
+
